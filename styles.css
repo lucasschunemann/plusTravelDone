@@ -49,7 +49,7 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, p, ol, ul, dl, dd, figure, blockquote { margin: 0; padding: 0; }
 ol, ul { list-style: none; }
@@ -261,6 +261,11 @@ strong { font-weight: 600; }
 .gallery.is-pinned .gallery__viewport { overflow: visible; scroll-snap-type: none; }
 .gallery.is-pinned .gallery__track { will-change: transform; }
 .gallery.is-pinned { padding-top: 0; }
+/* Keep the pinned frame inside short viewports and clear of the fixed nav. */
+.gallery.is-pinned .gallery__sticky { padding-top: 68px; }
+.gallery.is-pinned .shot--p { width: min(22vw, 30vh); }
+.gallery.is-pinned .shot--l { width: min(34vw, 53vh); }
+.gallery.is-pinned .shot--s { width: min(26vw, 40vh); }
 
 /* Reviews */
 .reviews__title { margin-bottom: clamp(32px, 4vw, 56px); }
