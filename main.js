@@ -82,19 +82,6 @@
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
   $$("[data-reveal], [data-split]").forEach((el) => io.observe(el));
 
-  /* ── Barcode ─────────────────────────────────────────────── */
-  const bc = $("[data-barcode]");
-  if (bc) {
-    let seed = 297;
-    const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-    for (let k = 0; k < 46; k++) {
-      const i = document.createElement("i");
-      i.style.flex = `${[1, 1, 2, 1, 3, 1, 2][Math.floor(rnd() * 7)]} 0 0`;
-      if (rnd() > 0.7) i.style.opacity = "0";
-      bc.append(i);
-    }
-  }
-
   /* ── Accordion ───────────────────────────────────────────── */
   $$("[data-accordion] .acc").forEach((acc) => {
     const btn = $(".acc__q", acc);
@@ -238,12 +225,6 @@
   // Late layout shifts (images, fonts) move sections; re-measure without re-laying out the gallery.
   new ResizeObserver(() => measure()).observe(document.body);
   onResize();
-
-  /* ── Pause decorative loops while offscreen ──────────────── */
-  const idle = new IntersectionObserver((entries) => {
-    entries.forEach((en) => en.target.classList.toggle("is-offscreen", !en.isIntersecting));
-  });
-  $$(".marquee, .stamp, .ticket__plane, .dot").forEach((el) => idle.observe(el));
 
   const y = $("[data-year]");
   if (y) y.textContent = new Date().getFullYear();
