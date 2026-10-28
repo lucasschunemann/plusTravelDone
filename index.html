@@ -18,9 +18,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="assets/img/hero-800.webp" imagesrcset="assets/img/hero-480.webp 480w, assets/img/hero-800.webp 800w, assets/img/hero-1080.webp 1080w" imagesizes="(max-width: 860px) calc(100vw - 32px), (max-width: 1080px) 40vw, 30vw" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- PENDENTE: pixel da Meta e Google Analytics/Tag Manager (precisa dos IDs do cliente). -->
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -29,16 +30,13 @@
     <div class="nav__inner wrap">
       <a href="#topo" class="wordmark" aria-label="TravelDone, início">Travel<span>Done</span></a>
       <nav class="nav__links" aria-label="Seções">
-        <a href="#sobre">Sobre</a>
-        <a href="#para-quem">Para quem é</a>
-        <a href="#curso">Conteúdo</a>
-        <a href="#viagens">Viagens</a>
+        <a href="#curso">O que você aprende</a>
+        <a href="#alunos">Depoimentos</a>
+        <a href="#sobre">Quem ensina</a>
+        <a href="#preco">Preço</a>
         <a href="#faq">Dúvidas</a>
       </nav>
-      <a href="#preco" class="btn btn--sm btn--ink">
-        <span class="btn__label"><span>Comprar</span><span aria-hidden="true">Comprar</span></span>
-        <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5" /></svg></span>
-      </a>
+      <a href="#preco" class="btn btn--sm btn--ink">Comprar</a>
     </div>
   </header>
 
@@ -47,77 +45,101 @@
     <!-- Hero -->
     <section class="hero wrap" id="topo">
       <div class="hero__grid">
-        <h1 class="hero__title" data-split>Sua viagem dos sonhos começa com <em>um&nbsp;plano.</em></h1>
-
         <div class="hero__copy">
-          <p class="lead" data-reveal>
-            Curso online sobre como juntar dinheiro, achar passagem barata, usar milhas e montar roteiro.
-            Quem ensina são Fernanda e Wagner, que viajam em família há mais de 15 anos e já passaram por mais de 15 países.
+          <h1 class="hero__title">Aprenda a organizar o dinheiro e planejar suas próximas viagens</h1>
+          <p class="lead">
+            Curso online com videoaulas e e-book: como separar dinheiro todo mês, achar passagem e hospedagem em promoção, usar milhas e montar o roteiro.
+            Quem ensina são Fernanda e Wagner Schünemann, que viajam em família há mais de 15 anos e já passaram por mais de 15 países.
           </p>
-          <div class="hero__ctas" data-reveal style="--d:.08s">
-            <a href="#preco" class="btn btn--plum">
-              <span class="btn__label"><span>Comprar o curso</span><span aria-hidden="true">Comprar o curso</span></span>
-              <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5" /></svg></span>
-            </a>
-            <a href="#curso" class="link-arrow">Ver o conteúdo</a>
+          <div class="hero__ctas">
+            <a href="#preco" class="btn btn--plum">Comprar o curso</a>
+            <a href="#curso" class="link-plain">Ver o que tem no curso</a>
           </div>
-          <ul class="hero__proof" data-reveal style="--d:.16s">
+          <ul class="hero__proof">
+            <li><span class="label">Preço</span>10× R$ 27,70 ou R$ 297</li>
             <li><span class="label">Acesso</span>1 ano</li>
             <li><span class="label">Garantia</span>7 dias</li>
-            <li><span class="label">Parcelado</span>10× R$ 27,70</li>
           </ul>
         </div>
 
-        <figure class="hero__card" data-reveal="scale">
-          <div class="hero__img" data-parallax>
+        <!-- PENDENTE: vídeo curto (60 a 90 s) de Fernanda e Wagner apresentando o curso. Entraria no lugar desta foto. -->
+        <figure class="hero__card">
+          <div class="hero__img">
             <img src="assets/img/hero-800.webp" srcset="assets/img/hero-480.webp 480w, assets/img/hero-800.webp 800w, assets/img/hero-1080.webp 1080w" sizes="(max-width: 860px) calc(100vw - 32px), (max-width: 1080px) 40vw, 30vw" width="1080" height="1920" decoding="async" alt="Fernanda, Wagner e o filho sorrindo abraçados na Disney" fetchpriority="high" />
           </div>
-          <figcaption class="hero__tag">
-            <span>Fernanda e Wagner</span>
-            <span class="label">15+ anos viajando</span>
-          </figcaption>
+          <figcaption class="caption">Fernanda, Wagner e o filho na Disney</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- Sobre -->
-    <section class="section wrap about" id="sobre">
-      <div class="section__head"><span class="label">Sobre</span></div>
+    <!--
+      PENDENTE: seção com os números reais das viagens do casal, logo depois do hero.
+      Ex.: "Europa 2024: 3 pessoas, 18 dias, R$ X no total, Y% das passagens com milhas".
+      Precisa de 2 ou 3 viagens com custo total, duração e quanto foi pago com milhas.
+    -->
 
-      <div class="about__grid">
-        <h2 class="display" data-reveal>Fernanda e Wagner Schünemann</h2>
+    <!-- O que você aprende -->
+    <section class="section section--tint" id="curso">
+      <div class="wrap">
+        <div class="section__intro">
+          <h2 class="display">O que você aprende</h2>
+          <p class="muted">Videoaulas na plataforma e um e-book com todo o conteúdo. O acesso vale por 1 ano e você pode rever as aulas quantas vezes quiser.</p>
+        </div>
 
-        <figure class="about__photo" data-reveal="scale">
-          <div class="about__img" data-parallax>
-            <img src="assets/img/about-800.webp" srcset="assets/img/about-480.webp 480w, assets/img/about-800.webp 800w, assets/img/about-1080.webp 1080w" sizes="(max-width: 860px) calc(100vw - 32px), 46vw" width="1080" height="1237" decoding="async" alt="Família reunida em frente ao castelo do Magic Kingdom" loading="lazy" />
+        <!-- PENDENTE: lista de módulos e aulas, número de aulas e duração total. Os blocos abaixo foram montados a partir dos temas já descritos no site. -->
+        <div class="topics">
+          <div class="topic" data-reveal>
+            <h3>Organizar o dinheiro</h3>
+            <ul>
+              <li>Como separar dinheiro todo mês para a próxima viagem</li>
+              <li>O acompanhamento financeiro das viagens de Fernanda e Wagner</li>
+              <li>E-book bônus de organização financeira</li>
+            </ul>
           </div>
-          <figcaption class="caption"><span>Magic Kingdom, Estados Unidos</span></figcaption>
-        </figure>
+          <div class="topic" data-reveal>
+            <h3>Pagar menos</h3>
+            <ul>
+              <li>Como encontrar e acompanhar promoções de voos e pacotes</li>
+              <li>Hospedagens e atrações em promoção</li>
+              <li>Como juntar e usar milhas</li>
+              <li>Onde economizar nos outlets dos EUA</li>
+            </ul>
+          </div>
+          <div class="topic" data-reveal>
+            <h3>Montar o roteiro</h3>
+            <ul>
+              <li>Guia para montar o roteiro da viagem</li>
+              <li>Documentos: visto e passaporte</li>
+              <li>O que fazer antes e durante a viagem</li>
+              <li>Viagens que funcionam para adultos e crianças</li>
+            </ul>
+          </div>
+          <div class="topic" data-reveal>
+            <h3>Ver na prática</h3>
+            <ul>
+              <li>Como o casal está planejando as próximas viagens, passo a passo</li>
+            </ul>
+          </div>
+        </div>
 
-        <div class="about__text">
-          <p class="lead" data-reveal>
-            Os dois são dentistas e viajam em família há mais de 15 anos.
-          </p>
-          <p class="muted" data-reveal style="--d:.06s">
-            O TravelDone junta o que eles aprenderam nesse tempo: como separar dinheiro para viajar, onde procurar promoção, como montar o roteiro e o que muda quando a viagem é com criança.
-          </p>
-
-          <dl class="stats" data-reveal style="--d:.12s">
-            <div><dt class="label">Anos viajando</dt><dd><span data-count="15">15</span>+</dd></div>
-            <div><dt class="label">Países</dt><dd><span data-count="15">15</span>+</dd></div>
-            <div><dt class="label">Continentes</dt><dd><span data-count="4">4</span></dd></div>
-          </dl>
+        <div class="section__cta">
+          <a href="#preco" class="btn btn--plum">Comprar o curso</a>
+          <span class="muted-sm">10× R$ 27,70 ou R$ 297 à vista</span>
         </div>
       </div>
     </section>
 
     <!-- Para quem é -->
     <section class="section wrap" id="para-quem">
-      <div class="section__head"><span class="label">Para quem é</span></div>
-
-      <h2 class="display display--wide" data-reveal>Quem aproveita mais o curso</h2>
+      <div class="section__intro">
+        <h2 class="display">Para quem é o curso</h2>
+      </div>
 
       <ul class="rows">
+        <li class="row" data-reveal>
+          <h3 class="row__title">Quem nunca planejou uma viagem</h3>
+          <p class="row__desc">O curso vai do roteiro aos documentos, como visto e passaporte.</p>
+        </li>
         <li class="row" data-reveal>
           <h3 class="row__title">Quem quer pagar menos</h3>
           <p class="row__desc">Achar passagens, hospedagens e atrações em promoção.</p>
@@ -127,165 +149,133 @@
           <p class="row__desc">Juntar e usar milhas, e planejar o dinheiro da viagem.</p>
         </li>
         <li class="row" data-reveal>
-          <h3 class="row__title">Quem tem medo de viajar</h3>
-          <p class="row__desc">Sozinho ou com a família, saber o que fazer antes e durante a viagem.</p>
+          <h3 class="row__title">Quem quer organizar as finanças</h3>
+          <p class="row__desc">Separar dinheiro todo mês para a próxima viagem.</p>
         </li>
         <li class="row" data-reveal>
           <h3 class="row__title">Quem viaja com crianças</h3>
           <p class="row__desc">Montar uma viagem que funcione para os adultos e para as crianças.</p>
         </li>
         <li class="row" data-reveal>
-          <h3 class="row__title">Quem nunca planejou uma viagem</h3>
-          <p class="row__desc">Do roteiro aos documentos, como visto e passaporte.</p>
-        </li>
-        <li class="row" data-reveal>
-          <h3 class="row__title">Quem quer organizar as finanças</h3>
-          <p class="row__desc">Separar dinheiro todo mês para a próxima viagem.</p>
+          <h3 class="row__title">Quem tem receio de viajar</h3>
+          <p class="row__desc">Sozinho ou com a família, saber o que fazer antes e durante a viagem.</p>
         </li>
       </ul>
     </section>
 
-    <!-- Conteúdo -->
-    <section class="section section--tint" id="curso">
-      <div class="wrap">
-        <div class="section__head"><span class="label">Conteúdo</span></div>
-
-        <div class="course__intro">
-          <h2 class="display" data-reveal>O que vem no curso</h2>
-          <p class="muted" data-reveal style="--d:.06s">
-            Videoaulas na plataforma e um e-book com todo o conteúdo. O acesso vale por 1 ano.
-          </p>
-        </div>
-
-        <ul class="includes">
-          <li data-reveal><h3>1 ano de acesso</h3><p>Assista quantas vezes quiser durante 12 meses.</p></li>
-          <li data-reveal style="--d:.05s"><h3>Descontos em outlets</h3><p>Dicas de onde economizar nos outlets dos EUA.</p></li>
-          <li data-reveal><h3>Promoções de voos e pacotes</h3><p>Como encontrar e acompanhar promoções.</p></li>
-          <li data-reveal style="--d:.05s"><h3>Guia de roteiros</h3><p>Um guia completo para montar o roteiro da viagem.</p></li>
-          <li data-reveal><h3>As finanças das viagens do casal</h3><p>O acompanhamento financeiro das viagens de Fernanda e Wagner.</p></li>
-          <li data-reveal style="--d:.05s"><h3>As próximas viagens, passo a passo</h3><p>Como o casal está planejando as próximas viagens.</p></li>
-          <li class="includes__bonus" data-reveal><h3><span class="pill">Bônus</span> E-book de organização financeira</h3><p>Como organizar o dinheiro para viajar mais vezes.</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Viagens -->
-    <section class="gallery" id="viagens" data-gallery>
-      <div class="gallery__sticky">
-        <div class="wrap gallery__head">
-          <div class="section__head">
-            <span class="label">Viagens</span>
-            <span class="label"><span data-gallery-index>01</span> / 15</span>
-          </div>
-          <h2 class="display" data-reveal>Algumas viagens da família</h2>
-        </div>
-
-        <div class="gallery__viewport">
-          <ul class="gallery__track" data-gallery-track>
-            <li class="shot shot--l"><img src="assets/img/barcelona-720.webp" srcset="assets/img/barcelona-480.webp 480w, assets/img/barcelona-720.webp 720w" sizes="(max-width: 880px) 300px, 34vw" width="720" height="540" decoding="async" alt="Barcelona, Espanha" loading="lazy" /><div class="caption"><span>Barcelona, ES</span></div></li>
-            <li class="shot shot--p"><img src="assets/img/eurodisney-720.webp" srcset="assets/img/eurodisney-480.webp 480w, assets/img/eurodisney-720.webp 720w" sizes="(max-width: 1000px) 240px, 22vw" width="720" height="960" decoding="async" alt="Disneyland Paris, França" loading="lazy" /><div class="caption"><span>Disneyland Paris, FR</span></div></li>
-            <li class="shot shot--l"><img src="assets/img/vall-de-nuria-720.webp" srcset="assets/img/vall-de-nuria-480.webp 480w, assets/img/vall-de-nuria-720.webp 720w" sizes="(max-width: 880px) 300px, 34vw" width="720" height="540" decoding="async" alt="Vall de Núria, Espanha" loading="lazy" /><div class="caption"><span>Vall de Núria, ES</span></div></li>
-            <li class="shot shot--p"><img src="assets/img/maputo-720.webp" srcset="assets/img/maputo-480.webp 480w, assets/img/maputo-720.webp 720w" sizes="(max-width: 1000px) 240px, 22vw" width="720" height="960" decoding="async" alt="Maputo, Moçambique" loading="lazy" /><div class="caption"><span>Maputo, MZ</span></div></li>
-            <li class="shot shot--s"><img src="assets/img/nuremberg-800.webp" srcset="assets/img/nuremberg-480.webp 480w, assets/img/nuremberg-800.webp 800w, assets/img/nuremberg-935.webp 935w" sizes="(max-width: 920px) 240px, 26vw" width="935" height="960" decoding="async" alt="Nuremberg, Alemanha" loading="lazy" /><div class="caption"><span>Nuremberg, DE</span></div></li>
-            <li class="shot shot--p"><img src="assets/img/erlangen-800.webp" srcset="assets/img/erlangen-480.webp 480w, assets/img/erlangen-800.webp 800w, assets/img/erlangen-899.webp 899w" sizes="(max-width: 1000px) 240px, 22vw" width="899" height="1169" decoding="async" alt="Erlangen, Alemanha" loading="lazy" /><div class="caption"><span>Erlangen, DE</span></div></li>
-            <li class="shot shot--s"><img src="assets/img/dublin-800.webp" srcset="assets/img/dublin-480.webp 480w, assets/img/dublin-800.webp 800w, assets/img/dublin-908.webp 908w" sizes="(max-width: 920px) 240px, 26vw" width="908" height="909" decoding="async" alt="Dublin, Irlanda" loading="lazy" /><div class="caption"><span>Dublin, IE</span></div></li>
-            <li class="shot shot--l"><img src="assets/img/budapest-800.webp" srcset="assets/img/budapest-480.webp 480w, assets/img/budapest-800.webp 800w, assets/img/budapest-821.webp 821w" sizes="(max-width: 880px) 300px, 34vw" width="821" height="628" decoding="async" alt="Budapeste, Hungria" loading="lazy" /><div class="caption"><span>Budapeste, HU</span></div></li>
-            <li class="shot shot--s"><img src="assets/img/verona-800.webp" srcset="assets/img/verona-480.webp 480w, assets/img/verona-800.webp 800w, assets/img/verona-835.webp 835w" sizes="(max-width: 920px) 240px, 26vw" width="835" height="713" decoding="async" alt="Verona, Itália" loading="lazy" /><div class="caption"><span>Verona, IT</span></div></li>
-            <li class="shot shot--s"><img src="assets/img/paris-773.webp" srcset="assets/img/paris-480.webp 480w, assets/img/paris-773.webp 773w" sizes="(max-width: 920px) 240px, 26vw" width="773" height="824" decoding="async" alt="Paris, França" loading="lazy" /><div class="caption"><span>Paris, FR</span></div></li>
-            <li class="shot shot--s"><img src="assets/img/londres-800.webp" srcset="assets/img/londres-480.webp 480w, assets/img/londres-800.webp 800w, assets/img/londres-881.webp 881w" sizes="(max-width: 920px) 240px, 26vw" width="881" height="894" decoding="async" alt="Londres, Inglaterra" loading="lazy" /><div class="caption"><span>Londres, UK</span></div></li>
-            <li class="shot shot--s"><img src="assets/img/rothenburg-800.webp" srcset="assets/img/rothenburg-480.webp 480w, assets/img/rothenburg-800.webp 800w, assets/img/rothenburg-900.webp 900w" sizes="(max-width: 920px) 240px, 26vw" width="900" height="891" decoding="async" alt="Rothenburg ob der Tauber, Alemanha" loading="lazy" /><div class="caption"><span>Rothenburg o.d.T., DE</span></div></li>
-            <li class="shot shot--p"><img src="assets/img/magic-kingdom-800.webp" srcset="assets/img/magic-kingdom-480.webp 480w, assets/img/magic-kingdom-800.webp 800w, assets/img/magic-kingdom-1200.webp 1200w" sizes="(max-width: 1000px) 240px, 22vw" width="1200" height="1600" decoding="async" alt="Magic Kingdom, Estados Unidos" loading="lazy" /><div class="caption"><span>Magic Kingdom, US</span></div></li>
-            <li class="shot shot--l"><img src="assets/img/foz-do-iguacu-800.webp" srcset="assets/img/foz-do-iguacu-480.webp 480w, assets/img/foz-do-iguacu-800.webp 800w, assets/img/foz-do-iguacu-1200.webp 1200w" sizes="(max-width: 880px) 300px, 34vw" width="1600" height="1200" decoding="async" alt="Foz do Iguaçu, Brasil" loading="lazy" /><div class="caption"><span>Foz do Iguaçu, BR</span></div></li>
-            <li class="shot shot--p"><img src="assets/img/fortaleza-800.webp" srcset="assets/img/fortaleza-480.webp 480w, assets/img/fortaleza-800.webp 800w, assets/img/fortaleza-1200.webp 1200w" sizes="(max-width: 1000px) 240px, 22vw" width="1200" height="1600" decoding="async" alt="Fortaleza, Brasil" loading="lazy" /><div class="caption"><span>Fortaleza, BR</span></div></li>
-          </ul>
-        </div>
-
-        <div class="wrap gallery__foot">
-          <div class="progress" aria-hidden="true"><span data-gallery-bar></span></div>
-        </div>
-      </div>
-    </section>
-
     <!-- Depoimentos -->
-    <section class="section wrap" id="alunos">
-      <div class="section__head"><span class="label">Depoimentos</span></div>
+    <section class="section section--tint" id="alunos">
+      <div class="wrap">
+        <div class="section__intro">
+          <h2 class="display">O que os alunos disseram</h2>
+        </div>
 
-      <h2 class="display display--wide reviews__title" data-reveal>O que os alunos disseram</h2>
+        <!-- PENDENTE: mais depoimentos (5 a 8), com nome e print. Se houver, número total de alunos. -->
+        <div class="reviews">
+          <article class="review" data-reveal>
+            <blockquote>
+              <p>“Confesso que ainda não assisti todos, mas a aula sobre finanças (que eu estava mais interessada) já valeu o custo pago!”</p>
+            </blockquote>
+            <footer>
+              <span class="avatar" aria-hidden="true">B</span>
+              <div><strong>Bianca Aline</strong><span class="muted-sm">Aluna</span></div>
+            </footer>
+            <figure class="review__proof">
+              <img src="assets/img/review-bianca-540.webp" srcset="assets/img/review-bianca-480.webp 480w, assets/img/review-bianca-540.webp 540w" sizes="(max-width: 860px) 240px, 200px" width="540" height="705" decoding="async" alt="Print da conversa de WhatsApp com o depoimento de Bianca Aline" loading="lazy" />
+            </figure>
+          </article>
 
-      <div class="reviews">
-        <article class="review" data-reveal>
-          <blockquote>
-            <p>“Confesso que ainda não assisti todos, mas a aula sobre finanças (que eu estava mais interessada) já valeu o custo pago!”</p>
-          </blockquote>
-          <footer>
-            <span class="avatar" aria-hidden="true">B</span>
-            <div><strong>Bianca Aline</strong><span class="label">Aluna</span></div>
-          </footer>
-          <figure class="review__proof">
-            <img src="assets/img/review-bianca-540.webp" srcset="assets/img/review-bianca-480.webp 480w, assets/img/review-bianca-540.webp 540w" sizes="(max-width: 860px) 240px, 200px" width="540" height="705" decoding="async" alt="Print da conversa de WhatsApp com o depoimento de Bianca Aline" loading="lazy" />
-          </figure>
-        </article>
+          <article class="review" data-reveal>
+            <blockquote>
+              <p>“Na parte de controle financeiro, me identifiquei muito e aprimorei aquilo que já estava fazendo com o conhecimento que foi passado.”</p>
+            </blockquote>
+            <footer>
+              <span class="avatar" aria-hidden="true">E</span>
+              <div><strong>Eduardo Harbs</strong><span class="muted-sm">Aluno</span></div>
+            </footer>
+            <figure class="review__proof review__proof--dark">
+              <img src="assets/img/review-eduardo-800.webp" srcset="assets/img/review-eduardo-480.webp 480w, assets/img/review-eduardo-800.webp 800w, assets/img/review-eduardo-894.webp 894w" sizes="(max-width: 860px) 240px, 200px" width="894" height="1280" decoding="async" alt="Print da conversa de WhatsApp com o depoimento de Eduardo Harbs" loading="lazy" />
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <article class="review" data-reveal style="--d:.08s">
-          <blockquote>
-            <p>“Na parte de controle financeiro, me identifiquei muito e aprimorei aquilo que já estava fazendo com o conhecimento que foi passado.”</p>
-          </blockquote>
-          <footer>
-            <span class="avatar" aria-hidden="true">E</span>
-            <div><strong>Eduardo Harbs</strong><span class="label">Aluno</span></div>
-          </footer>
-          <figure class="review__proof review__proof--dark">
-            <img src="assets/img/review-eduardo-800.webp" srcset="assets/img/review-eduardo-480.webp 480w, assets/img/review-eduardo-800.webp 800w, assets/img/review-eduardo-894.webp 894w" sizes="(max-width: 860px) 240px, 200px" width="894" height="1280" decoding="async" alt="Print da conversa de WhatsApp com o depoimento de Eduardo Harbs" loading="lazy" />
-          </figure>
-        </article>
+    <!-- Quem ensina -->
+    <section class="section wrap about" id="sobre">
+      <div class="about__grid">
+        <figure class="about__photo">
+          <div class="about__img">
+            <img src="assets/img/about-800.webp" srcset="assets/img/about-480.webp 480w, assets/img/about-800.webp 800w, assets/img/about-1080.webp 1080w" sizes="(max-width: 860px) calc(100vw - 32px), 46vw" width="1080" height="1237" decoding="async" alt="Família reunida em frente ao castelo do Magic Kingdom" loading="lazy" />
+          </div>
+          <figcaption class="caption">Magic Kingdom, Estados Unidos</figcaption>
+        </figure>
+
+        <div class="about__text">
+          <h2 class="display">Quem ensina</h2>
+          <p class="lead">
+            Fernanda e Wagner Schünemann são dentistas e viajam em família há mais de 15 anos.
+          </p>
+          <!-- PENDENTE: confirmar com o cliente se dá para dizer que planejam as viagens no tempo livre, com rotina de trabalho normal. -->
+          <p class="muted">
+            O TravelDone junta o que eles aprenderam nesse tempo: como separar dinheiro para viajar, onde procurar promoção, como montar o roteiro e o que muda quando a viagem é com criança.
+          </p>
+
+          <dl class="stats">
+            <div><dt class="label">Anos viajando</dt><dd>15+</dd></div>
+            <div><dt class="label">Países</dt><dd>15+</dd></div>
+            <div><dt class="label">Continentes</dt><dd>4</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="trips" id="viagens">
+        <h3 class="trips__title">Algumas viagens da família</h3>
+        <!-- PENDENTE: se o cliente passar custo e duração de algumas viagens, colocar na legenda de cada foto. -->
+        <ul class="trips__grid">
+          <li><img src="assets/img/barcelona-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Barcelona, Espanha</span></li>
+          <li><img src="assets/img/eurodisney-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Disneyland Paris, França</span></li>
+          <li><img src="assets/img/vall-de-nuria-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Vall de Núria, Espanha</span></li>
+          <li><img src="assets/img/maputo-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Maputo, Moçambique</span></li>
+          <li><img src="assets/img/nuremberg-480.webp" width="480" height="493" decoding="async" alt="" loading="lazy" /><span>Nuremberg, Alemanha</span></li>
+          <li><img src="assets/img/erlangen-480.webp" width="480" height="624" decoding="async" alt="" loading="lazy" /><span>Erlangen, Alemanha</span></li>
+          <li><img src="assets/img/dublin-480.webp" width="480" height="481" decoding="async" alt="" loading="lazy" /><span>Dublin, Irlanda</span></li>
+          <li><img src="assets/img/budapest-480.webp" width="480" height="367" decoding="async" alt="" loading="lazy" /><span>Budapeste, Hungria</span></li>
+          <li><img src="assets/img/verona-480.webp" width="480" height="410" decoding="async" alt="" loading="lazy" /><span>Verona, Itália</span></li>
+          <li><img src="assets/img/paris-480.webp" width="480" height="512" decoding="async" alt="" loading="lazy" /><span>Paris, França</span></li>
+          <li><img src="assets/img/londres-480.webp" width="480" height="487" decoding="async" alt="" loading="lazy" /><span>Londres, Inglaterra</span></li>
+          <li><img src="assets/img/rothenburg-480.webp" width="480" height="475" decoding="async" alt="" loading="lazy" /><span>Rothenburg, Alemanha</span></li>
+          <li><img src="assets/img/foz-do-iguacu-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Foz do Iguaçu, Brasil</span></li>
+          <li><img src="assets/img/fortaleza-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Fortaleza, Brasil</span></li>
+        </ul>
       </div>
     </section>
 
     <!-- Preço -->
     <section class="pricing" id="preco">
       <div class="wrap">
-        <div class="section__head section__head--dark"><span class="label">Preço</span></div>
+        <h2 class="display display--light">Um ano de acesso por menos de R$&nbsp;1 por dia</h2>
 
-        <h2 class="display display--light" data-reveal>Um ano de acesso por menos de R$&nbsp;1 por dia</h2>
-
-        <div class="ticket" data-reveal="scale" data-tilt>
-          <div class="ticket__main">
-            <div class="ticket__head">
-              <span class="wordmark wordmark--sm">Travel<span>Done</span></span>
-              <span class="label">Curso completo</span>
+        <div class="offer">
+          <div class="offer__main">
+            <h3 class="offer__title">Curso completo TravelDone</h3>
+            <ul class="checks">
+              <li>Videoaulas na plataforma, com 1 ano de acesso</li>
+              <li>E-book com todo o conteúdo do curso</li>
+              <li><span class="pill">Bônus</span> E-book de organização financeira para viajar mais</li>
+            </ul>
+            <div class="offer__guarantee">
+              <strong>Garantia de 7 dias</strong>
+              <p>Se não gostar, peça o reembolso em até 7 dias e receba de volta o valor pago.</p>
             </div>
-
-            <dl class="ticket__fields">
-              <div><dt class="label">Acesso</dt><dd>12 meses</dd></div>
-              <div><dt class="label">Formato</dt><dd>Videoaulas e e&#8209;book</dd></div>
-              <div><dt class="label">Pagamento</dt><dd>Hotmart</dd></div>
-            </dl>
-
-            <div class="ticket__price">
-              <div>
-                <span class="label">10× de</span>
-                <p class="price">R$&nbsp;27<small>,70</small></p>
-                <span class="muted-sm">ou R$ 297,00 à vista</span>
-              </div>
-              <ul class="checks">
-                <li>Plataforma com videoaulas</li>
-                <li>E-book com todo o conteúdo</li>
-                <li><span class="pill">Bônus</span> E-book de organização financeira para viajar mais</li>
-              </ul>
-            </div>
-
-            <a href="https://pay.hotmart.com/R97382843U?off=xl9x8lfx" class="btn btn--plum btn--block" target="_blank" rel="noopener">
-              <span class="btn__label"><span>Comprar o curso</span><span aria-hidden="true">Comprar o curso</span></span>
-              <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5" /></svg></span>
-            </a>
-            <p class="secure"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg> Pagamento pela Hotmart</p>
           </div>
 
-          <div class="ticket__stub">
-            <span class="label">Garantia</span>
-            <p class="stub__big">7 <span>dias</span></p>
-            <p class="stub__title">Garantia incondicional</p>
-            <p class="stub__text">Se não gostar, peça o reembolso em até 7 dias e receba de volta o valor pago.</p>
+          <div class="offer__buy">
+            <span class="label">10× de</span>
+            <p class="price">R$&nbsp;27<small>,70</small></p>
+            <span class="muted-sm">ou R$ 297,00 à vista</span>
+            <a href="https://pay.hotmart.com/R97382843U?off=xl9x8lfx" class="btn btn--plum btn--block" target="_blank" rel="noopener">Comprar o curso</a>
+            <p class="secure"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg> Pagamento seguro pela Hotmart. O acesso chega por e-mail.</p>
           </div>
         </div>
       </div>
@@ -295,12 +285,12 @@
     <section class="section wrap faq" id="faq">
       <div class="faq__grid">
         <div class="faq__intro">
-          <span class="label">Dúvidas</span>
-          <h2 class="display" data-reveal>Perguntas frequentes</h2>
-          <p class="muted" data-reveal>Se a sua dúvida não estiver aqui, fale com a gente no WhatsApp.</p>
-          <a class="link-arrow" href="https://api.whatsapp.com/send?phone=5547997037356" target="_blank" rel="noopener" data-reveal>Abrir o WhatsApp</a>
+          <h2 class="display">Perguntas frequentes</h2>
+          <p class="muted">Se a sua dúvida não estiver aqui, fale com a gente no WhatsApp.</p>
+          <a class="link-plain" href="https://api.whatsapp.com/send?phone=5547997037356" target="_blank" rel="noopener">Abrir o WhatsApp</a>
         </div>
 
+        <!-- PENDENTE: respostas do cliente para "Quantas horas de aula são?", "Serve para viagem nacional?", "Preciso ter cartão de crédito com milhas?", "O conteúdo é atualizado?" e "Tem suporte ou grupo de alunos?". -->
         <div class="accordion" data-accordion>
           <div class="acc">
             <button class="acc__q" aria-expanded="false"><span>Como recebo o acesso ao curso?</span><i aria-hidden="true"></i></button>
@@ -319,6 +309,10 @@
             <div class="acc__a"><div><p>Sim. Fernanda e Wagner viajam com o filho e mostram como planejam essas viagens.</p></div></div>
           </div>
           <div class="acc">
+            <button class="acc__q" aria-expanded="false"><span>O que vem no e-book bônus?</span><i aria-hidden="true"></i></button>
+            <div class="acc__a"><div><p>É um e-book de organização financeira, sobre como organizar o dinheiro para viajar mais vezes. Ele vem junto com o curso, sem custo extra.</p></div></div>
+          </div>
+          <div class="acc">
             <button class="acc__q" aria-expanded="false"><span>E se eu não gostar?</span><i aria-hidden="true"></i></button>
             <div class="acc__a"><div><p>A garantia é de 7 dias. Se pedir o reembolso nesse prazo, você recebe de volta o valor pago.</p></div></div>
           </div>
@@ -332,45 +326,36 @@
 
     <!-- CTA final -->
     <section class="final wrap">
-      <h2 class="final__title" data-split>Comece a planejar a próxima viagem</h2>
-      <p class="muted" data-reveal>R$ 297 à vista ou 10× de R$ 27,70, com 7 dias de garantia.</p>
-      <div class="final__ctas" data-reveal>
-        <a href="#preco" class="btn btn--plum">
-          <span class="btn__label"><span>Comprar o curso</span><span aria-hidden="true">Comprar o curso</span></span>
-          <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5" /></svg></span>
-        </a>
-        <a class="link-arrow" href="https://api.whatsapp.com/send?phone=5547997037356" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <h2 class="final__title">Comece a planejar a próxima viagem</h2>
+      <p class="muted">R$ 297 à vista ou 10× de R$ 27,70, com 7 dias de garantia.</p>
+      <div class="final__ctas">
+        <a href="#preco" class="btn btn--plum">Comprar o curso</a>
+        <a class="link-plain" href="https://api.whatsapp.com/send?phone=5547997037356" target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrap">
-      <div class="footer__row">
-        <span class="label">TravelDone © <span data-year>2026</span></span>
-        <nav class="footer__links" aria-label="Rodapé">
-          <a href="#sobre">Sobre</a>
-          <a href="#curso">Conteúdo</a>
-          <a href="#preco">Preço</a>
-          <a href="https://api.whatsapp.com/send?phone=5547997037356" target="_blank" rel="noopener">Contato</a>
-        </nav>
-        <a class="label" href="https://lucasvon.framer.website/" target="_blank" rel="noopener">Site por Lucas Von</a>
-      </div>
-      <p class="footer__mark" aria-hidden="true">Travel<span>Done</span></p>
+    <div class="wrap footer__row">
+      <span class="wordmark wordmark--sm">Travel<span>Done</span></span>
+      <nav class="footer__links" aria-label="Rodapé">
+        <a href="#curso">O que você aprende</a>
+        <a href="#sobre">Quem ensina</a>
+        <a href="#preco">Preço</a>
+        <a href="https://api.whatsapp.com/send?phone=5547997037356" target="_blank" rel="noopener">Contato</a>
+      </nav>
+      <span class="muted-sm">© <span data-year>2026</span> TravelDone · <a href="https://lucasvon.framer.website/" target="_blank" rel="noopener">Site por Lucas Von</a></span>
     </div>
   </footer>
 
   <div class="dock" data-dock>
     <div>
-      <span class="label">10× R$ 27,70</span>
-      <strong>Garantia de 7 dias</strong>
+      <strong>10× R$ 27,70</strong>
+      <span>Garantia de 7 dias</span>
     </div>
-    <a href="#preco" class="btn btn--plum btn--sm">
-      <span class="btn__label"><span>Comprar</span><span aria-hidden="true">Comprar</span></span>
-    </a>
+    <a href="#preco" class="btn btn--plum btn--sm">Comprar</a>
   </div>
 
-  <script src="assets/vendor/lenis.min.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>
