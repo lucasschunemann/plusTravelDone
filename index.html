@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="assets/img/hero-800.webp" imagesrcset="assets/img/hero-480.webp 480w, assets/img/hero-800.webp 800w, assets/img/hero-1080.webp 1080w" imagesizes="(max-width: 860px) calc(100vw - 32px), (max-width: 1080px) 40vw, 30vw" fetchpriority="high" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <!-- PENDENTE: pixel da Meta e Google Analytics/Tag Manager (precisa dos IDs do cliente). -->
 </head>
 <body>
@@ -38,6 +38,7 @@
       </nav>
       <a href="#preco" class="btn btn--sm btn--ink">Comprar</a>
     </div>
+    <span class="nav__progress" aria-hidden="true"></span>
   </header>
 
   <main id="conteudo">
@@ -46,16 +47,16 @@
     <section class="hero wrap" id="topo">
       <div class="hero__grid">
         <div class="hero__copy">
-          <h1 class="hero__title">Aprenda a organizar o dinheiro e planejar suas próximas viagens</h1>
-          <p class="lead">
+          <h1 class="hero__title" data-split>Aprenda a organizar o dinheiro e planejar suas próximas viagens</h1>
+          <p class="lead hero__in" style="--d:.35s">
             Curso online com videoaulas e e-book: como separar dinheiro todo mês, achar passagem e hospedagem em promoção, usar milhas e montar o roteiro.
             Quem ensina são Fernanda e Wagner Schünemann, que viajam em família há mais de 15 anos e já passaram por mais de 15 países.
           </p>
-          <div class="hero__ctas">
-            <a href="#preco" class="btn btn--plum">Comprar o curso</a>
+          <div class="hero__ctas hero__in" style="--d:.45s">
+            <a href="#preco" class="btn btn--plum">Comprar o curso <span class="btn__arrow" aria-hidden="true">→</span></a>
             <a href="#curso" class="link-plain">Ver o que tem no curso</a>
           </div>
-          <ul class="hero__proof">
+          <ul class="hero__proof hero__in" style="--d:.55s">
             <li><span class="label">Preço</span>10× R$ 27,70 ou R$ 297</li>
             <li><span class="label">Acesso</span>1 ano</li>
             <li><span class="label">Garantia</span>7 dias</li>
@@ -64,6 +65,10 @@
 
         <!-- PENDENTE: vídeo curto (60 a 90 s) de Fernanda e Wagner apresentando o curso. Entraria no lugar desta foto. -->
         <figure class="hero__card">
+          <div class="hero__stack" aria-hidden="true">
+            <img class="snap snap--a" src="assets/img/paris-480.webp" width="480" height="512" alt="" decoding="async" />
+            <img class="snap snap--b" src="assets/img/budapest-480.webp" width="480" height="367" alt="" decoding="async" />
+          </div>
           <div class="hero__img">
             <img src="assets/img/hero-800.webp" srcset="assets/img/hero-480.webp 480w, assets/img/hero-800.webp 800w, assets/img/hero-1080.webp 1080w" sizes="(max-width: 860px) calc(100vw - 32px), (max-width: 1080px) 40vw, 30vw" width="1080" height="1920" decoding="async" alt="Fernanda, Wagner e o filho sorrindo abraçados na Disney" fetchpriority="high" />
           </div>
@@ -82,7 +87,7 @@
     <section class="section section--tint" id="curso">
       <div class="wrap">
         <div class="section__intro">
-          <h2 class="display">O que você aprende</h2>
+          <h2 class="display" data-split>O que você aprende</h2>
           <p class="muted">Videoaulas na plataforma e um e-book com todo o conteúdo. O acesso vale por 1 ano e você pode rever as aulas quantas vezes quiser.</p>
         </div>
 
@@ -123,7 +128,7 @@
         </div>
 
         <div class="section__cta">
-          <a href="#preco" class="btn btn--plum">Comprar o curso</a>
+          <a href="#preco" class="btn btn--plum">Comprar o curso <span class="btn__arrow" aria-hidden="true">→</span></a>
           <span class="muted-sm">10× R$ 27,70 ou R$ 297 à vista</span>
         </div>
       </div>
@@ -132,7 +137,7 @@
     <!-- Para quem é -->
     <section class="section wrap" id="para-quem">
       <div class="section__intro">
-        <h2 class="display">Para quem é o curso</h2>
+        <h2 class="display" data-split>Para quem é o curso</h2>
       </div>
 
       <ul class="rows">
@@ -167,7 +172,7 @@
     <section class="section section--tint" id="alunos">
       <div class="wrap">
         <div class="section__intro">
-          <h2 class="display">O que os alunos disseram</h2>
+          <h2 class="display" data-split>O que os alunos disseram</h2>
         </div>
 
         <!-- PENDENTE: mais depoimentos (5 a 8), com nome e print. Se houver, número total de alunos. -->
@@ -180,9 +185,9 @@
               <span class="avatar" aria-hidden="true">B</span>
               <div><strong>Bianca Aline</strong><span class="muted-sm">Aluna</span></div>
             </footer>
-            <figure class="review__proof">
-              <img src="assets/img/review-bianca-540.webp" srcset="assets/img/review-bianca-480.webp 480w, assets/img/review-bianca-540.webp 540w" sizes="(max-width: 860px) 240px, 200px" width="540" height="705" decoding="async" alt="Print da conversa de WhatsApp com o depoimento de Bianca Aline" loading="lazy" />
-            </figure>
+            <button class="review__proof" type="button" data-zoom="assets/img/review-bianca-540.webp" aria-label="Ampliar o print da conversa com Bianca Aline">
+              <img src="assets/img/review-bianca-480.webp" width="480" height="627" decoding="async" alt="Print da conversa de WhatsApp com o depoimento de Bianca Aline" loading="lazy" />
+            </button>
           </article>
 
           <article class="review" data-reveal>
@@ -193,9 +198,9 @@
               <span class="avatar" aria-hidden="true">E</span>
               <div><strong>Eduardo Harbs</strong><span class="muted-sm">Aluno</span></div>
             </footer>
-            <figure class="review__proof review__proof--dark">
-              <img src="assets/img/review-eduardo-800.webp" srcset="assets/img/review-eduardo-480.webp 480w, assets/img/review-eduardo-800.webp 800w, assets/img/review-eduardo-894.webp 894w" sizes="(max-width: 860px) 240px, 200px" width="894" height="1280" decoding="async" alt="Print da conversa de WhatsApp com o depoimento de Eduardo Harbs" loading="lazy" />
-            </figure>
+            <button class="review__proof review__proof--dark" type="button" data-zoom="assets/img/review-eduardo-894.webp" aria-label="Ampliar o print da conversa com Eduardo Harbs">
+              <img src="assets/img/review-eduardo-480.webp" width="480" height="687" decoding="async" alt="Print da conversa de WhatsApp com o depoimento de Eduardo Harbs" loading="lazy" />
+            </button>
           </article>
         </div>
       </div>
@@ -204,15 +209,8 @@
     <!-- Quem ensina -->
     <section class="section wrap about" id="sobre">
       <div class="about__grid">
-        <figure class="about__photo">
-          <div class="about__img">
-            <img src="assets/img/about-800.webp" srcset="assets/img/about-480.webp 480w, assets/img/about-800.webp 800w, assets/img/about-1080.webp 1080w" sizes="(max-width: 860px) calc(100vw - 32px), 46vw" width="1080" height="1237" decoding="async" alt="Família reunida em frente ao castelo do Magic Kingdom" loading="lazy" />
-          </div>
-          <figcaption class="caption">Magic Kingdom, Estados Unidos</figcaption>
-        </figure>
-
         <div class="about__text">
-          <h2 class="display">Quem ensina</h2>
+          <h2 class="display" data-split>Quem ensina</h2>
           <p class="lead">
             Fernanda e Wagner Schünemann são dentistas e viajam em família há mais de 15 anos.
           </p>
@@ -222,31 +220,47 @@
           </p>
 
           <dl class="stats">
-            <div><dt class="label">Anos viajando</dt><dd>15+</dd></div>
-            <div><dt class="label">Países</dt><dd>15+</dd></div>
-            <div><dt class="label">Continentes</dt><dd>4</dd></div>
+            <div><dt class="label">Anos viajando</dt><dd><span data-count="15">15</span>+</dd></div>
+            <div><dt class="label">Países</dt><dd><span data-count="15">15</span>+</dd></div>
+            <div><dt class="label">Continentes</dt><dd><span data-count="4">4</span></dd></div>
           </dl>
         </div>
-      </div>
 
-      <div class="trips" id="viagens">
-        <h3 class="trips__title">Algumas viagens da família</h3>
-        <!-- PENDENTE: se o cliente passar custo e duração de algumas viagens, colocar na legenda de cada foto. -->
-        <ul class="trips__grid">
-          <li><img src="assets/img/barcelona-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Barcelona, Espanha</span></li>
-          <li><img src="assets/img/eurodisney-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Disneyland Paris, França</span></li>
-          <li><img src="assets/img/vall-de-nuria-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Vall de Núria, Espanha</span></li>
-          <li><img src="assets/img/maputo-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Maputo, Moçambique</span></li>
-          <li><img src="assets/img/nuremberg-480.webp" width="480" height="493" decoding="async" alt="" loading="lazy" /><span>Nuremberg, Alemanha</span></li>
-          <li><img src="assets/img/erlangen-480.webp" width="480" height="624" decoding="async" alt="" loading="lazy" /><span>Erlangen, Alemanha</span></li>
-          <li><img src="assets/img/dublin-480.webp" width="480" height="481" decoding="async" alt="" loading="lazy" /><span>Dublin, Irlanda</span></li>
-          <li><img src="assets/img/budapest-480.webp" width="480" height="367" decoding="async" alt="" loading="lazy" /><span>Budapeste, Hungria</span></li>
-          <li><img src="assets/img/verona-480.webp" width="480" height="410" decoding="async" alt="" loading="lazy" /><span>Verona, Itália</span></li>
-          <li><img src="assets/img/paris-480.webp" width="480" height="512" decoding="async" alt="" loading="lazy" /><span>Paris, França</span></li>
-          <li><img src="assets/img/londres-480.webp" width="480" height="487" decoding="async" alt="" loading="lazy" /><span>Londres, Inglaterra</span></li>
-          <li><img src="assets/img/rothenburg-480.webp" width="480" height="475" decoding="async" alt="" loading="lazy" /><span>Rothenburg, Alemanha</span></li>
-          <li><img src="assets/img/foz-do-iguacu-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Foz do Iguaçu, Brasil</span></li>
-          <li><img src="assets/img/fortaleza-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Fortaleza, Brasil</span></li>
+        <figure class="about__photo" data-reveal="photo">
+          <div class="about__img">
+            <img src="assets/img/about-800.webp" srcset="assets/img/about-480.webp 480w, assets/img/about-800.webp 800w, assets/img/about-1080.webp 1080w" sizes="(max-width: 860px) calc(100vw - 32px), 46vw" width="1080" height="1237" decoding="async" alt="Família reunida em frente ao castelo do Magic Kingdom" loading="lazy" />
+          </div>
+          <figcaption class="caption">Magic Kingdom, Estados Unidos</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Viagens -->
+    <section class="trips" id="viagens" aria-labelledby="trips-title">
+      <div class="wrap">
+        <h2 class="trips__title" id="trips-title">Algumas viagens da família</h2>
+      </div>
+      <!-- PENDENTE: se o cliente passar custo e duração de algumas viagens, colocar na legenda de cada foto. -->
+      <div class="marquee" data-marquee>
+        <ul class="marquee__track">
+          <li class="snap" style="--r:-3deg"><img src="assets/img/barcelona-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Barcelona, Espanha</span></li>
+          <li class="snap" style="--r:2deg"><img src="assets/img/eurodisney-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Disneyland Paris, França</span></li>
+          <li class="snap" style="--r:-1.5deg"><img src="assets/img/vall-de-nuria-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Vall de Núria, Espanha</span></li>
+          <li class="snap" style="--r:3deg"><img src="assets/img/maputo-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Maputo, Moçambique</span></li>
+          <li class="snap" style="--r:-2deg"><img src="assets/img/nuremberg-480.webp" width="480" height="493" decoding="async" alt="" loading="lazy" /><span>Nuremberg, Alemanha</span></li>
+          <li class="snap" style="--r:1.5deg"><img src="assets/img/erlangen-480.webp" width="480" height="624" decoding="async" alt="" loading="lazy" /><span>Erlangen, Alemanha</span></li>
+          <li class="snap" style="--r:-2.5deg"><img src="assets/img/dublin-480.webp" width="480" height="481" decoding="async" alt="" loading="lazy" /><span>Dublin, Irlanda</span></li>
+        </ul>
+      </div>
+      <div class="marquee marquee--rev" data-marquee>
+        <ul class="marquee__track">
+          <li class="snap" style="--r:2deg"><img src="assets/img/budapest-480.webp" width="480" height="367" decoding="async" alt="" loading="lazy" /><span>Budapeste, Hungria</span></li>
+          <li class="snap" style="--r:-3deg"><img src="assets/img/verona-480.webp" width="480" height="410" decoding="async" alt="" loading="lazy" /><span>Verona, Itália</span></li>
+          <li class="snap" style="--r:1deg"><img src="assets/img/paris-480.webp" width="480" height="512" decoding="async" alt="" loading="lazy" /><span>Paris, França</span></li>
+          <li class="snap" style="--r:-2deg"><img src="assets/img/londres-480.webp" width="480" height="487" decoding="async" alt="" loading="lazy" /><span>Londres, Inglaterra</span></li>
+          <li class="snap" style="--r:2.5deg"><img src="assets/img/rothenburg-480.webp" width="480" height="475" decoding="async" alt="" loading="lazy" /><span>Rothenburg, Alemanha</span></li>
+          <li class="snap" style="--r:-1.5deg"><img src="assets/img/foz-do-iguacu-480.webp" width="480" height="360" decoding="async" alt="" loading="lazy" /><span>Foz do Iguaçu, Brasil</span></li>
+          <li class="snap" style="--r:3deg"><img src="assets/img/fortaleza-480.webp" width="480" height="640" decoding="async" alt="" loading="lazy" /><span>Fortaleza, Brasil</span></li>
         </ul>
       </div>
     </section>
@@ -254,15 +268,15 @@
     <!-- Preço -->
     <section class="pricing" id="preco">
       <div class="wrap">
-        <h2 class="display display--light">Um ano de acesso por menos de R$&nbsp;1 por dia</h2>
+        <h2 class="display display--light" data-split>Um ano de acesso por menos de R$&nbsp;1 por dia</h2>
 
-        <div class="offer">
+        <div class="offer" data-reveal>
           <div class="offer__main">
             <h3 class="offer__title">Curso completo TravelDone</h3>
             <ul class="checks">
               <li>Videoaulas na plataforma, com 1 ano de acesso</li>
               <li>E-book com todo o conteúdo do curso</li>
-              <li><span class="pill">Bônus</span> E-book de organização financeira para viajar mais</li>
+              <li><span><span class="pill">Bônus</span> E-book de organização financeira para viajar mais</span></li>
             </ul>
             <div class="offer__guarantee">
               <strong>Garantia de 7 dias</strong>
@@ -274,7 +288,7 @@
             <span class="label">10× de</span>
             <p class="price">R$&nbsp;27<small>,70</small></p>
             <span class="muted-sm">ou R$ 297,00 à vista</span>
-            <a href="https://pay.hotmart.com/R97382843U?off=xl9x8lfx" class="btn btn--plum btn--block" target="_blank" rel="noopener">Comprar o curso</a>
+            <a href="https://pay.hotmart.com/R97382843U?off=xl9x8lfx" class="btn btn--plum btn--block" target="_blank" rel="noopener">Comprar o curso <span class="btn__arrow" aria-hidden="true">→</span></a>
             <p class="secure"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg> Pagamento seguro pela Hotmart. O acesso chega por e-mail.</p>
           </div>
         </div>
@@ -285,7 +299,7 @@
     <section class="section wrap faq" id="faq">
       <div class="faq__grid">
         <div class="faq__intro">
-          <h2 class="display">Perguntas frequentes</h2>
+          <h2 class="display" data-split>Perguntas frequentes</h2>
           <p class="muted">Se a sua dúvida não estiver aqui, fale com a gente no WhatsApp.</p>
           <a class="link-plain" href="https://api.whatsapp.com/send?phone=5547997037356" target="_blank" rel="noopener">Abrir o WhatsApp</a>
         </div>
@@ -325,11 +339,17 @@
     </section>
 
     <!-- CTA final -->
-    <section class="final wrap">
-      <h2 class="final__title">Comece a planejar a próxima viagem</h2>
+    <section class="final" data-final>
+      <div class="final__floats" aria-hidden="true">
+        <img class="snap float float--1" data-depth="0.18" src="assets/img/verona-480.webp" width="480" height="410" alt="" loading="lazy" decoding="async" />
+        <img class="snap float float--2" data-depth="-0.12" src="assets/img/eurodisney-480.webp" width="480" height="640" alt="" loading="lazy" decoding="async" />
+        <img class="snap float float--3" data-depth="-0.2" src="assets/img/dublin-480.webp" width="480" height="481" alt="" loading="lazy" decoding="async" />
+        <img class="snap float float--4" data-depth="0.14" src="assets/img/foz-do-iguacu-480.webp" width="480" height="360" alt="" loading="lazy" decoding="async" />
+      </div>
+      <h2 class="final__title" data-split>Comece a planejar a próxima viagem</h2>
       <p class="muted">R$ 297 à vista ou 10× de R$ 27,70, com 7 dias de garantia.</p>
       <div class="final__ctas">
-        <a href="#preco" class="btn btn--plum">Comprar o curso</a>
+        <a href="#preco" class="btn btn--plum">Comprar o curso <span class="btn__arrow" aria-hidden="true">→</span></a>
         <a class="link-plain" href="https://api.whatsapp.com/send?phone=5547997037356" target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
     </section>
@@ -356,6 +376,11 @@
     <a href="#preco" class="btn btn--plum btn--sm">Comprar</a>
   </div>
 
-  <script src="main.js" defer></script>
+  <dialog class="lightbox" data-lightbox aria-label="Print do depoimento">
+    <img alt="" />
+    <button type="button" class="lightbox__close" aria-label="Fechar">×</button>
+  </dialog>
+
+  <script src="main.js?v=4" defer></script>
 </body>
 </html>
